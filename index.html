@@ -2,19 +2,26 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>kodi - simple remote</title>
 
   <link rel="stylesheet" href="styles/styles.css"/>
   <script src="scripts/vendor/jquery-2.1.1.min.js"></script>
-  <script src="scripts/app.js"></script>
-
+  <!--<script src="scripts/xbmc.core.js"></script>-->
+  <!--<script src="scripts/xbmc.rpc.js"></script>-->
+  <!--<script src="scripts/app.js"></script>-->
 </head>
 <body>
 
 <div class="container">
   <div class="col-xs-12">
-    <p class="text-success text-center">It works!</p>
-    <p class="text-center"><i class="fa fa-fw fa-2x fa-heart"></i></p>
+    <div class="circle-panel">
+      <button id="btn-up" class="btn btn-default btn-circle-up"><i class="fa fa-fw fa-chevron-up"></i></button>
+      <button id="btn-right" class="btn btn-default btn-circle-right"><i class="fa fa-fw fa-chevron-right"></i></button>
+      <button id="btn-down" class="btn btn-default btn-circle-down"><i class="fa fa-fw fa-chevron-down"></i></button>
+      <button id="btn-left" class="btn btn-default btn-circle-left"><i class="fa fa-fw fa-chevron-left"></i></button>
+      <button id="btn-enter" class="btn btn-default btn-circle-enter"><i class="fa fa-fw fa-circle"></i></button>
+    </div>
   </div>
 </div>
 

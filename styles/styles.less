@@ -1,3 +1,72 @@
 @import "vendor/bootstrap/less/bootstrap.less";
 @import (css) "vendor/font-awesome/css/font-awesome.min.css";
 
+//variables
+@circle-panel-diameter: 600px;
+@circle-panel-btn-diameter: @circle-panel-diameter / 3;
+
+//mixins
+.circle-panel-button() {
+  color: red;
+  border: 0;
+  position: absolute;
+  width: @circle-panel-btn-diameter;
+  height: @circle-panel-btn-diameter;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 1;
+  .transition(background .2s ease);
+  font-size: 3em;
+  &:hover {
+    z-index: 2;
+  }
+}
+
+.circle-panel() {
+  width: @circle-panel-diameter;
+  height: @circle-panel-diameter;
+
+  border: 2px solid gray;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -(@circle-panel-diameter / 2);
+}
+
+//styles
+html, body {
+  height: 100%;
+}
+
+.container, .container > .col-xs-12 {
+  height: 100%;
+}
+
+.circle-panel {
+  .circle-panel;
+  .btn {
+    .circle-panel-button;
+    &.btn-circle-up {
+      top: 0px;
+      left: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
+    }
+    &.btn-circle-right {
+      top: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
+      right: 0;
+    }
+    &.btn-circle-down {
+      bottom: 0;
+      left: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
+    }
+    &.btn-circle-left {
+      top: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
+      left: 0px;
+    }
+    &.btn-circle-enter {
+      top: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
+      left: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
+    }
+  }
+}
+
