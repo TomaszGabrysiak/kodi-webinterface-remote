@@ -6164,3 +6164,119 @@ button.close {
     display: none !important;
   }
 }
+.circle-panel {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -150px;
+  border: 2px solid #bce8f1;
+  border-radius: 50%;
+}
+.circle-panel-button {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  color: #31708f;
+  font-size: 3em;
+}
+.circle-panel-button:hover {
+  z-index: 2;
+  background-color: #d9edf7;
+}
+.circle-panel-button-bottom {
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.circle-panel-button-bottom:hover {
+  background: #d9edf7;
+}
+html,
+body {
+  height: 100%;
+}
+.container,
+.container > .col-xs-12 {
+  height: 100%;
+}
+.circle-panel {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -150px;
+  border: 2px solid #bce8f1;
+  border-radius: 50%;
+}
+.circle-panel .btn {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  color: #31708f;
+  font-size: 3em;
+}
+.circle-panel .btn:hover {
+  z-index: 2;
+  background-color: #d9edf7;
+}
+.circle-panel .btn.btn-circle-up {
+  top: 0px;
+  left: 100px;
+}
+.circle-panel .btn.btn-circle-right {
+  top: 100px;
+  right: 0;
+}
+.circle-panel .btn.btn-circle-down {
+  bottom: 0;
+  left: 100px;
+}
+.circle-panel .btn.btn-circle-left {
+  top: 100px;
+  left: 0px;
+}
+.circle-panel .btn.btn-circle-enter {
+  top: 100px;
+  left: 100px;
+}
+.circle-panel .btn.btn-circle-back {
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  left: 0;
+}
+.circle-panel .btn.btn-circle-back:hover {
+  background: #d9edf7;
+}
+.circle-panel .btn.btn-circle-home {
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  right: 0;
+}
+.circle-panel .btn.btn-circle-home:hover {
+  background: #d9edf7;
+}

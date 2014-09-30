@@ -2,36 +2,50 @@
 @import (css) "vendor/font-awesome/css/font-awesome.min.css";
 
 //variables
-@circle-panel-diameter: 600px;
+@circle-panel-diameter: 300px;
 @circle-panel-btn-diameter: @circle-panel-diameter / 3;
 
+
 //mixins
-.circle-panel-button() {
-  color: red;
-  border: 0;
+.circle-panel {
+  position: fixed;
+  width: @circle-panel-diameter;
+  height: @circle-panel-diameter;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -(@circle-panel-diameter / 2);
+  border: 2px solid @state-info-border;
+  border-radius: 50%;
+}
+
+.circle-panel-button {
   position: absolute;
   width: @circle-panel-btn-diameter;
   height: @circle-panel-btn-diameter;
+  z-index: 1;
+  border: 0;
   border-radius: 50%;
   padding: 0;
-  z-index: 1;
-  .transition(background .2s ease);
+  color: @state-info-text;
   font-size: 3em;
+  //.transition(background .2s ease);
   &:hover {
     z-index: 2;
+    background-color: @state-info-bg;
   }
 }
 
-.circle-panel() {
-  width: @circle-panel-diameter;
-  height: @circle-panel-diameter;
-
-  border: 2px solid gray;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 100px;
-  left: 50%;
-  margin-left: -(@circle-panel-diameter / 2);
+.circle-panel-button-bottom {
+  width: @circle-panel-btn-diameter / 2;
+  height: @circle-panel-btn-diameter / 2;
+  border-radius: 3px;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  &:hover {
+    background: @state-info-bg;
+  }
 }
 
 //styles
@@ -66,6 +80,14 @@ html, body {
     &.btn-circle-enter {
       top: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
       left: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
+    }
+    &.btn-circle-back {
+      .circle-panel-button-bottom;
+      left: 0;
+    }
+    &.btn-circle-home {
+      .circle-panel-button-bottom;
+      right: 0;
     }
   }
 }
