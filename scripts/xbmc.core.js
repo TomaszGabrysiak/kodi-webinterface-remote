@@ -1,5 +1,5 @@
 (function(window) {
-  "use strict";
+  'use strict';
 
   var xbmc = window.xbmc || {};
 
