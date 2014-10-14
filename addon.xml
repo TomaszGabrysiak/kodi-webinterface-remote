@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<addon
+  id="webinterface.simple"
+  version="0.0.1"
+  name="Simple Remote"
+  provider-name="Tomasz Gabrysiak">
+  <requires>
+    <import addon="xbmc.json" version="6.0.0"/>
+  </requires>
+  <extension
+    point="xbmc.gui.webinterface"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Simple Web Interface for Kodi</summary>
+    <description lang="en">Simple Web Interface for Kodi, uses responsive design to look good on all screens</description>
+    <platform>all</platform>
+    <language>en</language>
+    <source>https://github.com/TomaszGabrysiak/kodi-webinterface-remote</source>
+  </extension>
+</addon>
