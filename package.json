@@ -10,6 +10,11 @@
   "license": "MIT",
   "dependencies": {
     "bower": ">= 1.3.12",
-    "grunt": ">=0.4.5"
+    "grunt": ">=0.4.5",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-less": "*"
   }
 }
