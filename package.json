@@ -1,0 +1,15 @@
+{
+  "name": "webinterface-remote",
+  "version": "0.0.1",
+  "description": "Web interface for Kodi",
+  "repository": {
+    "type": "git",
+    "url": "ssh://github.com/TomaszGabrysiak/kodi-webinterface-remote.git"
+  },
+  "author": "Tomasz Gabrysiak",
+  "license": "MIT",
+  "dependencies": {
+    "bower": ">= 1.3.12",
+    "grunt": ">=0.4.5"
+  }
+}
