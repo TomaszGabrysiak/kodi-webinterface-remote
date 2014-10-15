@@ -24,7 +24,7 @@ kodiApp.factory('kodiRPCCaller', [
       },
       '_sendRequest': function(method, params) {
         console.log('kodiRPCCaller::_sendRequest');
-        $http.post('/jsonp?' + method, {
+        $http.post('/jsonrpc?' + method, {
           'jsonrpc': '2.0',
           'method': method,
           'id': 1,
