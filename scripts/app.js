@@ -2,13 +2,53 @@ var kodiApp = angular.module('kodiRemoteApp', [
   'ngTouch'
 ]);
 
+kodiApp.factory('kodiRPCCaller', [
+  '$interval',
+  '$http',
+  function($interval, $http) {
+    var kodiRPCCaller = function() {
+      this.init();
+    };
+    kodiRPCCaller.prototype = {
+      'status': 'disconnected',
+      'init': function() {
+        console.log('kodiRPCCaller::init');
+        var that = this;
+        this._updateIntervalPromise = $interval(function() { that._updateState(); }, 1000);
+      },
+      '_updateState': function() {
+        console.log('kodiRPCCaller::_updateState');
+        this._sendRequest('Player.GetActivePlayers');
+      },
+      '_sendRequest': function(method, params) {
+        console.log('kodiRPCCaller::_sendRequest');
+        $http.post('/jsonp?' + method, {
+          'jsonrpc': '2.0',
+          'method': method,
+          'id': 1,
+          'params': params
+        }).
+        success(function(data, status, headers, config) {
+            this.status = 'connected';
+        }).
+        error(function(data, status, headers, config) {
+            this.status = 'disconnected';
+        });
+      }
+    };
+    return kodiRPCCaller;
+  }]
+);
+
 kodiApp.controller('kodiCirclePanelCtrl', [
   '$scope',
-  function($scope) {
-    $scope.circlePanelClick = function(value) {
-      console.log('circlePanelClick');
+  'kodiRPCCaller',
+  function($scope, kodiRPCCaller) {
+    var caller = new kodiRPCCaller();
+
+    $scope.circlePanelClick = function(method) {
+      console.log('kodiCirclePanelCtrl::circlePanelClick::', method);
     };
   }
 ]);
-
 
