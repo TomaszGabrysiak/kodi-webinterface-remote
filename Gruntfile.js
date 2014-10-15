@@ -17,8 +17,8 @@ module.exports = function(grunt) {
       },
       src: {
         src: [
-          'scripts/xbmc.core.js',
-          'scripts/xbmc.rpc.js',
+          //'scripts/xbmc.core.js',
+          //'scripts/xbmc.rpc.js',
           'scripts/app.js'
         ],
         dest: 'build/app.js'

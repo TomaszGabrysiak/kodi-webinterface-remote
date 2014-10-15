@@ -10,10 +10,10 @@
 </head>
 <body>
 
-<div class="container">
+<div ng-app="kodiRemoteApp" class="container">
   <div class="col-xs-12">
-    <div class="circle-panel">
-      <button id="btn-up" class="btn btn-default btn-circle-up"><i class="fa fa-fw fa-chevron-up"></i></button>
+    <div ng-controller="kodiCirclePanelCtrl" class="circle-panel">
+      <button ng-click="circlePanelClick()" id="btn-up" class="btn btn-default btn-circle-up"><i class="fa fa-fw fa-chevron-up"></i></button>
       <button id="btn-right" class="btn btn-default btn-circle-right"><i class="fa fa-fw fa-chevron-right"></i></button>
       <button id="btn-down" class="btn btn-default btn-circle-down"><i class="fa fa-fw fa-chevron-down"></i></button>
       <button id="btn-left" class="btn btn-default btn-circle-left"><i class="fa fa-fw fa-chevron-left"></i></button>
