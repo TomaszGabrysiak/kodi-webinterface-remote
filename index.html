@@ -10,17 +10,17 @@
 </head>
 <body>
 
-<div class="container">
+<div ng-app="kodiRemoteApp" class="container">
   <div class="col-xs-12">
-    <div class="circle-panel">
-      <button id="btn-up" class="btn btn-default btn-circle-up"><i class="fa fa-fw fa-chevron-up"></i></button>
-      <button id="btn-right" class="btn btn-default btn-circle-right"><i class="fa fa-fw fa-chevron-right"></i></button>
-      <button id="btn-down" class="btn btn-default btn-circle-down"><i class="fa fa-fw fa-chevron-down"></i></button>
-      <button id="btn-left" class="btn btn-default btn-circle-left"><i class="fa fa-fw fa-chevron-left"></i></button>
-      <button id="btn-enter" class="btn btn-default btn-circle-enter"><i class="fa fa-fw fa-circle"></i></button>
+    <div ng-controller="kodiCirclePanelCtrl" class="circle-panel">
+      <button ng-click="circlePanelClick('Input.Up')" class="btn btn-default btn-circle-up"><i class="fa fa-fw fa-chevron-up"></i></button>
+      <button ng-click="circlePanelClick('Input.Right')" class="btn btn-default btn-circle-right"><i class="fa fa-fw fa-chevron-right"></i></button>
+      <button ng-click="circlePanelClick('Input.Down')" class="btn btn-default btn-circle-down"><i class="fa fa-fw fa-chevron-down"></i></button>
+      <button ng-click="circlePanelClick('Input.Left')" class="btn btn-default btn-circle-left"><i class="fa fa-fw fa-chevron-left"></i></button>
+      <button ng-click="circlePanelClick('Input.Enter')" class="btn btn-default btn-circle-enter"><i class="fa fa-fw fa-circle"></i></button>
 
-      <button id="btn-back" class="btn btn-default btn-circle-back"><i class="fa fa-fw fa-reply"></i></button>
-      <button id="btn-home" class="btn btn-default btn-circle-home"><i class="fa fa-fw fa-home"></i></button>
+      <button ng-click="circlePanelClick('Input.Back')" class="btn btn-default btn-circle-back"><i class="fa fa-fw fa-reply"></i></button>
+      <button ng-click="circlePanelClick('Input.Home')" class="btn btn-default btn-circle-home"><i class="fa fa-fw fa-home"></i></button>
     </div>
   </div>
 </div>
