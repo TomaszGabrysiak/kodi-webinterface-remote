@@ -10,7 +10,8 @@ module.exports = function(grunt) {
         src: [
           'bower_components/jquery/dist/jquery.js',
           'bower_components/angular/angular.js',
-          'bower_components/bootstrap/dist/js/bootstrap.js'
+          'bower_components/angular-touch/angular-touch.js',
+//          'bower_components/bootstrap/dist/js/bootstrap.js'
         ],
         dest: 'build/deps.js'
       },
