@@ -14,7 +14,9 @@ kodiApp.factory('kodiRPCCaller', [
       'init': function() {
         console.log('kodiRPCCaller::init');
         var that = this;
-        this._updateIntervalPromise = $interval(function() { that._updateState(); }, 1000);
+
+        //TODO: in future or after switch into WebSocket - check connection and update state
+        //this._updateIntervalPromise = $interval(function() { that._updateState(); }, 1000);
       },
       '_updateState': function() {
         console.log('kodiRPCCaller::_updateState');
@@ -48,6 +50,8 @@ kodiApp.controller('kodiCirclePanelCtrl', [
 
     $scope.circlePanelClick = function(method) {
       console.log('kodiCirclePanelCtrl::circlePanelClick::', method);
+      //TODO: do not use private method
+      caller._sendRequest(method);
     };
   }
 ]);
