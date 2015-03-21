@@ -26,7 +26,7 @@
   position: fixed;
   width: @circle-panel-diameter;
   height: @circle-panel-diameter;
-  bottom: 10px;
+  bottom: 10px + @circle-panel-btn-diameter / 2;
   left: 50%;
   margin-left: -(@circle-panel-diameter / 2);
   border: 2px solid @state-info-border;
@@ -54,7 +54,7 @@
   width: @circle-panel-btn-diameter / 2;
   height: @circle-panel-btn-diameter / 2;
   border-radius: 3px;
-  bottom: 0;
+  bottom: -@circle-panel-btn-diameter / 2;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -99,6 +99,10 @@ html, body {
     &.btn-circle-back {
       .circle-panel-button-bottom;
       left: 0;
+    }
+    &.btn-circle-playpause {
+      .circle-panel-button-bottom;
+      left: @circle-panel-diameter / 2 - @circle-panel-btn-diameter / 4;
     }
     &.btn-circle-home {
       .circle-panel-button-bottom;
