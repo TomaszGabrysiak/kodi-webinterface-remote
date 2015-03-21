@@ -13,10 +13,6 @@ kodiApp.factory('kodiRPCCaller', [
       'status': 'disconnected',
       'init': function() {
         console.log('kodiRPCCaller::init');
-        var that = this;
-
-        //TODO: in future or after switch into WebSocket - check connection and update state
-        //this._updateIntervalPromise = $interval(function() { that._updateState(); }, 1000);
       },
       '_updateState': function() {
         console.log('kodiRPCCaller::_updateState');
