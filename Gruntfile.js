@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>'],
+      files: ['<%= jshint.files %>', 'styles/styles.less'],
       tasks: ['jshint', 'build-dev']
     },
     copy: {
@@ -90,5 +90,13 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build-dev', ['copy-deps', 'copy-src', 'copy', 'uglify', 'less']);
   grunt.registerTask('dev', ['build-dev', 'watch']);
+
+  grunt.registerTask('build-production', 'Builds whole plugin.', function(ver) {
+    if (ver === null) {
+      grunt.warn('Version must be specified. Eg: 0.0.1');
+    } else {
+      grunt.task.run('build-dev');
+    }
+  });
 
 };
