@@ -2,25 +2,26 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <title>kodi - simple remote</title>
 
-  <link rel="stylesheet" href="build/styles.css"/>
-  <script src="build/app.bundle.min.js"></script>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="app.bundle.min.js"></script>
 </head>
 <body>
 
-<div class="container">
+<div ng-app="kodiRemoteApp" class="container">
   <div class="col-xs-12">
-    <div class="circle-panel">
-      <button id="btn-up" class="btn btn-default btn-circle-up"><i class="fa fa-fw fa-chevron-up"></i></button>
-      <button id="btn-right" class="btn btn-default btn-circle-right"><i class="fa fa-fw fa-chevron-right"></i></button>
-      <button id="btn-down" class="btn btn-default btn-circle-down"><i class="fa fa-fw fa-chevron-down"></i></button>
-      <button id="btn-left" class="btn btn-default btn-circle-left"><i class="fa fa-fw fa-chevron-left"></i></button>
-      <button id="btn-enter" class="btn btn-default btn-circle-enter"><i class="fa fa-fw fa-circle"></i></button>
+    <div ng-controller="kodiCirclePanelCtrl" class="circle-panel">
+      <button ng-click="circlePanelClick('Input.Up')" class="btn btn-default btn-circle-up"><i class="fa fa-fw fa-chevron-up"></i></button>
+      <button ng-click="circlePanelClick('Input.Right')" class="btn btn-default btn-circle-right"><i class="fa fa-fw fa-chevron-right"></i></button>
+      <button ng-click="circlePanelClick('Input.Down')" class="btn btn-default btn-circle-down"><i class="fa fa-fw fa-chevron-down"></i></button>
+      <button ng-click="circlePanelClick('Input.Left')" class="btn btn-default btn-circle-left"><i class="fa fa-fw fa-chevron-left"></i></button>
+      <button ng-click="circlePanelClick('Input.Select')" class="btn btn-default btn-circle-enter"><i class="fa fa-fw fa-circle"></i></button>
 
-      <button id="btn-back" class="btn btn-default btn-circle-back"><i class="fa fa-fw fa-reply"></i></button>
-      <button id="btn-home" class="btn btn-default btn-circle-home"><i class="fa fa-fw fa-home"></i></button>
+      <button ng-click="circlePanelClick('Input.Back')" class="btn btn-default btn-circle-back"><i class="fa fa-fw fa-reply"></i></button>
+      <button ng-click="circlePanelClick('Player.PlayPause')" class="btn btn-default btn-circle-playpause"><i class="fa fa-fw fa-play"></i></button>
+      <button ng-click="circlePanelClick('Input.Home')" class="btn btn-default btn-circle-home"><i class="fa fa-fw fa-home"></i></button>
     </div>
   </div>
 </div>

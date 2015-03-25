@@ -1,5 +1,20 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
-@import (css) "../bower_components/fontawesome/css/font-awesome.min.css";
+
+//font awesome - just to
+@import "../bower_components/fontawesome/less/variables.less";
+@fa-font-path: "/fonts";
+@import "../bower_components/fontawesome/less/mixins.less";
+@import "../bower_components/fontawesome/less/path.less";
+@import "../bower_components/fontawesome/less/core.less";
+@import "../bower_components/fontawesome/less/larger.less";
+@import "../bower_components/fontawesome/less/fixed-width.less";
+@import "../bower_components/fontawesome/less/list.less";
+@import "../bower_components/fontawesome/less/bordered-pulled.less";
+@import "../bower_components/fontawesome/less/spinning.less";
+@import "../bower_components/fontawesome/less/rotated-flipped.less";
+@import "../bower_components/fontawesome/less/stacked.less";
+@import "../bower_components/fontawesome/less/icons.less";
+
 
 //variables
 @circle-panel-diameter: 300px;
@@ -11,7 +26,7 @@
   position: fixed;
   width: @circle-panel-diameter;
   height: @circle-panel-diameter;
-  bottom: 10px;
+  bottom: 10px + @circle-panel-btn-diameter / 2;
   left: 50%;
   margin-left: -(@circle-panel-diameter / 2);
   border: 2px solid @state-info-border;
@@ -39,7 +54,7 @@
   width: @circle-panel-btn-diameter / 2;
   height: @circle-panel-btn-diameter / 2;
   border-radius: 3px;
-  bottom: 0;
+  bottom: -@circle-panel-btn-diameter / 2;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -84,6 +99,10 @@ html, body {
     &.btn-circle-back {
       .circle-panel-button-bottom;
       left: 0;
+    }
+    &.btn-circle-playpause {
+      .circle-panel-button-bottom;
+      left: @circle-panel-diameter / 2 - @circle-panel-btn-diameter / 4;
     }
     &.btn-circle-home {
       .circle-panel-button-bottom;
