@@ -1,6 +1,5 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
 
-//font awesome - just to
 @import "../bower_components/fontawesome/less/variables.less";
 @fa-font-path: "/fonts";
 @import "../bower_components/fontawesome/less/mixins.less";
@@ -16,98 +15,18 @@
 @import "../bower_components/fontawesome/less/icons.less";
 
 
-//variables
-@circle-panel-diameter: 300px;
-@circle-panel-btn-diameter: @circle-panel-diameter / 3;
-
-
-//mixins
-.circle-panel {
-  position: fixed;
-  width: @circle-panel-diameter;
-  height: @circle-panel-diameter;
-  bottom: 10px + @circle-panel-btn-diameter / 2;
-  left: 50%;
-  margin-left: -(@circle-panel-diameter / 2);
-  border: 2px solid @state-info-border;
-  border-radius: 50%;
-}
-
-.circle-panel-button {
-  position: absolute;
-  width: @circle-panel-btn-diameter;
-  height: @circle-panel-btn-diameter;
-  z-index: 1;
-  border: 0;
-  border-radius: 50%;
-  padding: 0;
-  color: @state-info-text;
-  font-size: 3em;
-  //.transition(background .2s ease);
-  &:hover {
-    z-index: 2;
-    background-color: @state-info-bg;
-  }
-}
-
-.circle-panel-button-bottom {
-  width: @circle-panel-btn-diameter / 2;
-  height: @circle-panel-btn-diameter / 2;
-  border-radius: 3px;
-  bottom: -@circle-panel-btn-diameter / 2;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  &:hover {
-    background: @state-info-bg;
-  }
-}
-
-//styles
 html, body {
   height: 100%;
 }
 
-.container, .container > .col-xs-12 {
-  height: 100%;
-}
-
-.circle-panel {
-  .circle-panel;
-  .btn {
-    .circle-panel-button;
-    &.btn-circle-up {
-      top: 0px;
-      left: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
-    }
-    &.btn-circle-right {
-      top: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
-      right: 0;
-    }
-    &.btn-circle-down {
-      bottom: 0;
-      left: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
-    }
-    &.btn-circle-left {
-      top: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
-      left: 0px;
-    }
-    &.btn-circle-enter {
-      top: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
-      left: (@circle-panel-diameter - @circle-panel-btn-diameter) / 2;
-    }
-    &.btn-circle-back {
-      .circle-panel-button-bottom;
-      left: 0;
-    }
-    &.btn-circle-playpause {
-      .circle-panel-button-bottom;
-      left: @circle-panel-diameter / 2 - @circle-panel-btn-diameter / 4;
-    }
-    &.btn-circle-home {
-      .circle-panel-button-bottom;
-      right: 0;
-    }
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #f5f5f5;
+  text-align: center;
+  font-size: 25px;
+  & i {
+    padding: 20px 0;
   }
 }
 
