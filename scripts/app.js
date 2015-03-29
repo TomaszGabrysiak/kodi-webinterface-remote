@@ -1,6 +1,24 @@
 var kodiApp = angular.module('kodiRemoteApp', [
-  'ngTouch'
-]);
+  'ngTouch',
+  'ngRoute',
+  'ngAnimate'
+]).config(['$routeProvider', function($routeProvider) {
+
+  $routeProvider
+    .when('/settings', {
+      templateUrl: '/templates/settings.html'
+    })
+    .when('/navigation', {
+      templateUrl: '/templates/navigation.html'
+    })
+    .when('/player', {
+      templateUrl: '/templates/player.html'
+    })
+    .otherwise({
+      redirectTo: '/navigation'
+    });
+
+}]);
 
 kodiApp.factory('kodiRPCCaller', [
   '$interval',
@@ -49,6 +67,14 @@ kodiApp.controller('kodiCirclePanelCtrl', [
       //TODO: do not use private method
       caller._sendRequest(method);
     };
+  }
+]);
+
+
+kodiApp.controller('footerNavCtrl', [
+  '$scope',
+  function($scope) {
+
   }
 ]);
 

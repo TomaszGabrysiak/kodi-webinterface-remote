@@ -10,7 +10,9 @@ module.exports = function(grunt) {
         src: [
           'bower_components/jquery/dist/jquery.js',
           'bower_components/angular/angular.js',
-          'bower_components/angular-touch/angular-touch.js'
+          'bower_components/angular-touch/angular-touch.js',
+          'bower_components/angular-animate/angular-animate.js',
+          'bower_components/angular-route/angular-route.js'
         ],
         dest: 'build/deps.js'
       },
@@ -33,7 +35,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>', 'styles/styles.less'],
+      files: ['<%= jshint.files %>', 'styles/styles.less', 'index.html', 'templates/*'],
       tasks: ['jshint', 'build-dev']
     },
     copy: {
@@ -41,8 +43,10 @@ module.exports = function(grunt) {
         files: [{
           src: 'index.html',
           dest: 'build/index.html'
-        },
-        {
+        }, {
+          src: 'templates/*',
+          dest: 'build/'
+        }, {
           cwd: 'bower_components/fontawesome/fonts',
           src: '*',
           dest: 'build/fonts',
