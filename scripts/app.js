@@ -9,7 +9,8 @@ var kodiApp = angular.module('kodiRemoteApp', [
       templateUrl: '/templates/settings.html'
     })
     .when('/navigation', {
-      templateUrl: '/templates/navigation.html'
+      templateUrl: '/templates/navigation.html',
+      controller: 'kodiNavigationCtrl'
     })
     .when('/player', {
       templateUrl: '/templates/player.html'
@@ -56,16 +57,14 @@ kodiApp.factory('kodiRPCCaller', [
   }]
 );
 
-kodiApp.controller('kodiCirclePanelCtrl', [
+kodiApp.controller('kodiNavigationCtrl', [
   '$scope',
   'kodiRPCCaller',
   function($scope, kodiRPCCaller) {
     var caller = new kodiRPCCaller();
 
-    $scope.circlePanelClick = function(method) {
-      console.log('kodiCirclePanelCtrl::circlePanelClick::', method);
-      //TODO: do not use private method
-      caller._sendRequest(method);
+    $scope.kodiNavigation = function(direction) {
+      caller._sendRequest('Input.' + direction);
     };
   }
 ]);

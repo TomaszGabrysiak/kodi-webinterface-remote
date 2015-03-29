@@ -1,1 +1,40 @@
-<p>navigation</p>
+<div class="kodi-navigation-container">
+  <div class="row kodi-navigation">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+      <!--up-->
+      <a ng-click="kodiNavigation('Up')"><i class="fa fa-fw fa-4x fa-chevron-circle-up"></i></a>
+    </div>
+    <div class="col-xs-4"></div>
+  </div>
+
+  <div class="row kodi-navigation">
+    <div class="col-xs-4 text-right">
+      <!--left-->
+      <a ng-click="kodiNavigation('Left')"><i class="fa fa-fw fa-4x fa-chevron-circle-left"></i></a>
+    </div>
+    <div class="col-xs-4">
+      <!--select-->
+      <a ng-click="kodiNavigation('Select')"><i class="fa fa-fw fa-4x fa-circle"></i></a>
+    </div>
+    <div class="col-xs-4 text-left">
+      <!--right-->
+      <a ng-click="kodiNavigation('Right')"><i class="fa fa-fw fa-4x fa-chevron-circle-right"></i></a>
+    </div>
+  </div>
+
+  <div class="row kodi-navigation">
+    <div class="col-xs-4">
+      <!--back-->
+      <a ng-click="kodiNavigation('Back')"><i class="fa fa-fw fa-4x fa-reply"></i></a>
+    </div>
+    <div class="col-xs-4">
+      <!--down-->
+      <a ng-click="kodiNavigation('Down')"><i class="fa fa-fw fa-4x fa-chevron-circle-down"></i></a>
+    </div>
+    <div class="col-xs-4">
+      <!--home-->
+      <a ng-click="kodiNavigation('Home')"><i class="fa fa-fw fa-4x fa-home"></i></a>
+    </div>
+  </div>
+</div>
