@@ -73,8 +73,11 @@ kodiApp.controller('kodiCirclePanelCtrl', [
 
 kodiApp.controller('footerNavCtrl', [
   '$scope',
-  function($scope) {
-
+  '$location',
+  function($scope, $location) {
+    $scope.navigateTo = function(path) {
+      $location.path(path);
+    };
   }
 ]);
 

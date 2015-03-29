@@ -36,13 +36,13 @@
       <footer ng-controller="footerNavCtrl" class="col-xs-12 footer">
         <div class="row">
           <div class="col-xs-4">
-            <a href="#/settings"><i class="fa fa-fw fa-sliders"></i></a>
+            <a ng-click="navigateTo('settings')"><i class="fa fa-fw fa-sliders"></i></a>
           </div>
           <div class="col-xs-4">
-            <a href="#/navigation"><i class="fa fa-fw fa-arrows-alt"></i></a>
+            <a ng-click="navigateTo('navigation')"><i class="fa fa-fw fa-arrows-alt"></i></a>
           </div>
           <div class="col-xs-4">
-            <a href="#/player"><i class="fa fa-fw fa-play-circle-o"></i></a>
+            <a ng-click="navigateTo('player')"><i class="fa fa-fw fa-play-circle-o"></i></a>
           </div>
         </div>
       </footer>
